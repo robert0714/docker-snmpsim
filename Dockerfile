@@ -10,4 +10,4 @@ EXPOSE 161/udp
 ENV EXTRA_FLAGS=""
 #CMD snmpsimd.py --agent-udpv4-endpoint=0.0.0.0:161 --process-user=snmpsim --process-group=nogroup $EXTRA_FLAGS
 ENV TZ=Asia/Taipei
-CMD [ "snmpsim-command-responder","--data-dir=/usr/local/snmpsim/data","--agent-udpv4-endpoint=0.0.0.0:161","--process-user=snmpsim","--process-group=nogroup","$EXTRA_FLAGS"]
+ENTRYPOINT [ "sh", "-c","snmpsim-command-responder --data-dir=/usr/local/snmpsim/data --agent-udpv4-endpoint=0.0.0.0:161 --process-user=snmpsim --process-group=nogroup $EXTRA_FLAGS"]
