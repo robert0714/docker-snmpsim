@@ -1,6 +1,8 @@
 FROM python:3.12-slim
-
-RUN pip install snmpsim
+ 
+RUN pip install pipenv
+RUN pipenv --python 3.12
+RUN pipenv install snmpsim
 
 RUN adduser --system snmpsim
 
