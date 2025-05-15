@@ -24,6 +24,8 @@ If you want to run snmpsimd with more flags then you can use `EXTRA_FLAGS`, like
 ## Note
 You might want to use some existing data files to get started quickly. Then, you can install snmpsim-data package as well. You can learn more about it in the [SNMP Simulator Data](https://www.pysnmp.com/snmpsim-data/).
 
+https://github.com/etingof/snmpsim-data
+
 ## Test the Setup
 * References: https://docs.lextudio.com/snmpsim/quick-start#test-the-setup
 * Depending on how many data files are loaded, the Simulator initializes a number of agents. You can then try them out with Net-SNMP’s command-line tools which are usually shipped along with your operating system:
