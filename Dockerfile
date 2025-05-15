@@ -1,5 +1,9 @@
 FROM python:3.12-slim
 
+RUN apt-get update && apt-get install -y \
+    iproute2 iputils-ping net-tools dnsutils \
+    tcpdump netcat traceroute curl vim less procps snmp \
+ && rm -rf /var/lib/apt/lists/*
 # Install required dependencies
 RUN pip install snmpsim
 
