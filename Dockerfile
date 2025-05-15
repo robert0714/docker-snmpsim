@@ -4,7 +4,7 @@ FROM python:3.12-slim
 RUN pip install snmpsim
 
 # Create a directory for SNMP simulation data
-ADD data /usr/local/snmpsim/data
+ADD data /opt/snmpsim/data
 
 # Set the working directory
 WORKDIR /opt/snmpsim
@@ -21,4 +21,4 @@ ENV TZ=Asia/Taipei
 
 USER snmpsim
 
-ENTRYPOINT [ "sh", "-c","snmpsim-command-responder --data-dir=/usr/local/snmpsim/data --agent-udpv4-endpoint=0.0.0.0:161 $EXTRA_FLAGS"]
+ENTRYPOINT [ "sh", "-c","snmpsim-command-responder --data-dir=/opt/snmpsim/data --agent-udpv4-endpoint=0.0.0.0:161 $EXTRA_FLAGS"]
