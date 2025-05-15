@@ -13,7 +13,7 @@ WORKDIR /opt/snmpsim
 RUN addgroup --system snmpsim && adduser --system --ingroup snmpsim snmpsim
 
 # Expose the SNMP port
-EXPOSE 161/udp
+EXPOSE 1161/udp
 
 ENV EXTRA_FLAGS=""
  
@@ -21,4 +21,4 @@ ENV TZ=Asia/Taipei
 
 USER snmpsim
 
-ENTRYPOINT [ "sh", "-c","snmpsim-command-responder --data-dir=/opt/snmpsim/data --agent-udpv4-endpoint=0.0.0.0:161 $EXTRA_FLAGS"]
+ENTRYPOINT [ "sh", "-c","snmpsim-command-responder --data-dir=/opt/snmpsim/data --agent-udpv4-endpoint=0.0.0.0:1161 $EXTRA_FLAGS"]
