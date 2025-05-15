@@ -88,3 +88,5 @@ https://github.com/etingof/snmpsim-data
 * References: https://docs.lextudio.com/snmpsim/quick-start#simulate-existing-snmp-agent
 ## Simulate from MIB
 * References: https://docs.lextudio.com/snmpsim/quick-start#simulate-from-mib
+## Reference
+* https://qiita.com/tkhr68000/items/db66985857eccf9f7ec1
