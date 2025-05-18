@@ -1,0 +1,11 @@
+services:
+  snmpsim:
+    image: ghcr.io/robert0714/docker-snmpsim:latest
+    container_name: snmpsim
+    # ports:
+      # - "1161:1161/udp"
+    volumes:
+      - ./data:/usr/local/snmpsim/data
+    environment: 
+      - TZ=Asia/Taipei
+    network_mode: host  

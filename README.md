@@ -26,6 +26,21 @@ You might want to use some existing data files to get started quickly. Then, you
 
 https://github.com/etingof/snmpsim-data
 
+```bash
+    Configuring /opt/snmpsim/data/Cisco_Cisco_ASR_1002-HX/Cisco_ASR_1002-HX.snmprec controller
+->  SNMPv1/2c community name: Cisco_Cisco_ASR_1002-HX/Cisco_ASR_1002-HX
+    SNMPv3 Context Name: f06a28cc9fb48a434d7ac387b19f83fc
+    Index /tmp/snmpsim/_opt_snmpsim_data_Fortinet_Fortinet_FG201F_Fortinet_FG201F.dbm does not exist for data file /opt/snmpsim/data/Fortinet_Fortinet_FG201F/Fortinet_FG201F.snmprec
+    Building index /tmp/snmpsim/_opt_snmpsim_data_Fortinet_Fortinet_FG201F_Fortinet_FG201F.dbm for data file /opt/snmpsim/data/Fortinet_Fortinet_FG201F/Fortinet_FG201F.snmprec (open flags "nfu")...
+    ...26 entries indexed
+    Configuring /opt/snmpsim/data/Fortinet_Fortinet_FG201F/Fortinet_FG201F.snmprec controller
+->  SNMPv1/2c community name: Fortinet_Fortinet_FG201F/Fortinet_FG201F
+    SNMPv3 Context Name: ac990019bf1f564d59fccae5a7778b42
+
+snmpwalk -v2c -c Cisco_Cisco_ASR_1002-HX/Cisco_ASR_1002-HX localhost:1161
+snmpwalk -v2c -c Fortinet_Fortinet_FG201F/Fortinet_FG201F localhost:1161
+```
+
 ## Test the Setup
 * References: https://docs.lextudio.com/snmpsim/quick-start#test-the-setup
 * Depending on how many data files are loaded, the Simulator initializes a number of agents. You can then try them out with Net-SNMP’s command-line tools which are usually shipped along with your operating system:
