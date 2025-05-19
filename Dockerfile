@@ -17,6 +17,9 @@ WORKDIR /opt/snmpsim
 # Command to run the SNMP simulator
 RUN addgroup --system snmpsim && adduser --system --ingroup snmpsim snmpsim
 
+ARG port_variable=1161 # <- this one's new
+ENV env_var_port=$port_variable # we reference it directly
+
 # Expose the SNMP port
 EXPOSE 1161/udp
 
@@ -26,4 +29,4 @@ ENV TZ=Asia/Taipei
 
 USER snmpsim
 
-ENTRYPOINT [ "sh", "-c","snmpsim-command-responder --data-dir=/opt/snmpsim/data --agent-udpv4-endpoint=0.0.0.0:1161 $EXTRA_FLAGS"]
+ENTRYPOINT [ "sh", "-c","snmpsim-command-responder --data-dir=/opt/snmpsim/data --agent-udpv4-endpoint=0.0.0.0:$env_var_port $EXTRA_FLAGS"]
