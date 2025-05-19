@@ -17,8 +17,8 @@ WORKDIR /opt/snmpsim
 # Command to run the SNMP simulator
 RUN addgroup --system snmpsim && adduser --system --ingroup snmpsim snmpsim
 
-ARG port_variable=1161 # <- this one's new
-ENV env_var_port=$port_variable # we reference it directly
+ARG port_variable=1161 
+ENV env_var_port=$port_variable
 
 # Expose the SNMP port
 EXPOSE 1161/udp
